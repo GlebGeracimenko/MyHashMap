@@ -5,7 +5,7 @@ import ua.gerasimenko.data_structure.NoFreePlaceException;
 
 public class TestMyHashMap {
 
-    private HashMapImpl hashMap;// = new HashMapImpl();
+    private HashMapImpl hashMap;
 
     @Test
     public void checkSize() {
@@ -60,8 +60,6 @@ public class TestMyHashMap {
         assertEquals(hashMap.get(-3), 56);
         assertEquals(hashMap.get(-19), 34);
         assertEquals(hashMap.get(-134), 555);
-//        assertEquals(hashMap.put(-19, 1919), 34);
-//        assertEquals(hashMap.get(-19), 1919);
     }
 
 }
