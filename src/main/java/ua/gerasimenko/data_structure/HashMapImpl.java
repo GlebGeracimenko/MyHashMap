@@ -28,7 +28,7 @@ public class HashMapImpl implements HashMap {
     /**
      * @param key key for searching value in HashMap
      * @return the value to which the specified key is mapped,
-     * or hashCode message "This key is not found!" if this map contains no mapping for the key.
+     * @throws NotFoundKeyException if this map contains no mapping for the key.
      */
     @Override
     public long get(int key) {
@@ -37,16 +37,16 @@ public class HashMapImpl implements HashMap {
             if (mas[i] != null && containsKey(mas[i], key)) {
                 return mas[i].value;
             }
-
         }
         //return -1; // must be more good solution
-        return "This key is not found!".hashCode();
+        throw new NotFoundKeyException();
     }
 
     /**
      * @param key key with which the specified value is to be associated
      * @param value value to be associated with the specified key
      * @return previous value if put replace existing node
+     * @throws NoFreePlaceException if there are no free cells in the array
      */
     @Override
     public long put(int key, long value) {
